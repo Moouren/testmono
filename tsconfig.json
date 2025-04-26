@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/auth-e2e"
+    },
+    {
+      "path": "./apps/auth"
+    },
+    {
+      "path": "./shell"
+    },
+    {
+      "path": "./apps/b2b-backoffice-e2e"
+    },
+    {
+      "path": "./apps/b2b-backoffice"
+    }
+  ]
+}
