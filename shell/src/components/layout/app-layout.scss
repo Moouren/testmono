@@ -1,0 +1,91 @@
+// app-layout.scss
+.app-layout {
+  // RTL support
+  &.rtl {
+    direction: rtl;
+    
+    .ant-menu-submenu-title .ant-menu-submenu-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .ant-dropdown-menu-submenu-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .app-sider {
+    .trigger-button {
+      margin-left: 0;
+      margin-right: 0;
+      
+      &:hover {
+        background-color: var(--ant-menu-dark-item-hover-bg) !important;
+        color: var(--ant-menu-dark-item-hover-color) !important;
+      }
+    }
+    
+    // Logo container
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      img {
+        width: auto;
+        height: 32px;
+      }
+    }
+    
+    // Override Ant Design menu styles to use theme variables
+    .ant-menu {
+      &.ant-menu-inline-collapsed {
+        .ant-menu-item, .ant-menu-submenu-title {
+          padding: 0 calc(50% - 16px) !important;
+        }
+      }
+      
+      .ant-menu-item, .ant-menu-submenu-title {
+        display: flex;
+        align-items: center;
+        
+        &.ant-menu-item-selected {
+          background-color: var(--ant-primary-color) !important;
+        }
+        
+        .ant-menu-item-icon, .anticon {
+          min-width: 14px;
+        }
+      }
+    }
+    
+    // User dropdown hover
+    .user-dropdown {
+      &:hover {
+        background-color: var(--ant-menu-dark-item-hover-bg) !important;
+      }
+    }
+  }
+}
+
+// Custom breadcrumb styling
+.ant-breadcrumb {
+  .ant-breadcrumb-link {
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// RTL support for menus and dropdowns
+html[dir="rtl"] {
+  .ant-menu-submenu-expand-icon, 
+  .ant-menu-submenu-arrow {
+    transform: scaleX(-1);
+  }
+  
+  .ant-dropdown-menu-submenu-arrow {
+    transform: scaleX(-1);
+  }
+}

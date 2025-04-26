@@ -1,0 +1,51 @@
+/* styles/globals.css */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Override Ant Design font family for all components */
+.ant-typography,
+.ant-menu,
+.ant-menu-item,
+.ant-menu-submenu,
+.ant-btn,
+.ant-input,
+.ant-select,
+.ant-dropdown-menu-item,
+.ant-form-item-label > label,
+.ant-form-item-control-input,
+.ant-checkbox + span,
+.ant-radio-wrapper,
+.ant-table,
+.ant-modal-title,
+.ant-modal-content,
+.ant-tabs-tab,
+.ant-tooltip,
+.ant-pagination,
+.ant-popover-inner-content,
+.ant-drawer-title,
+.ant-drawer-body,
+.ant-tabs-tab,
+.ant-select-selection-item,
+.ant-select-item,
+.ant-badge-count {
+  font-family: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Variable font class for components that need it */
+.font-variable {
+  font-family: 'IRANYekanXVF', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* RTL support */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}

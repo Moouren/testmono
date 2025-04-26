@@ -1,0 +1,206 @@
+// libs/src/lib/components/providers/direction-provider.scss
+
+// Base direction wrapper styles
+.direction-wrapper {
+    width: 100%;
+    height: 100%;
+    
+    // LTR specific styles
+    &.ltr {
+      direction: ltr;
+      text-align: left;
+      
+      input, 
+      textarea {
+        text-align: left;
+      }
+    }
+    
+    // RTL specific styles
+    &.rtl {
+      direction: rtl;
+      text-align: right;
+      
+      // Fix for input fields to properly display RTL content
+      input, 
+      textarea {
+        text-align: right;
+      }
+      
+      // Handle RTL specific overrides for Ant Design components
+      .ant-menu-submenu-popup {
+        &.ant-menu-dark,
+        &.ant-menu-light {
+          .ant-menu-submenu-title {
+            .ant-menu-submenu-arrow {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+      
+      // Fix for dropdown positioning
+      .ant-dropdown {
+        &.ant-dropdown-placement-bottomRight {
+          transform-origin: calc(100% - 16px) 0;
+        }
+      }
+      
+      // Fix for date picker calendar arrows
+      .ant-picker-header-super-next-btn,
+      .ant-picker-header-super-prev-btn,
+      .ant-picker-header-next-btn,
+      .ant-picker-header-prev-btn {
+        transform: rotate(180deg);
+      }
+      
+      // Fix for Select dropdown
+      .ant-select-dropdown {
+        direction: rtl;
+        
+        .ant-select-item {
+          text-align: right;
+        }
+      }
+      
+      // Fix for drawer position
+      .ant-drawer-right {
+        &.ant-drawer-open {
+          .ant-drawer-content-wrapper {
+            box-shadow: -6px 0 16px -8px rgba(0, 0, 0, 0.08),
+                       -9px 0 28px 0 rgba(0, 0, 0, 0.05),
+                       -12px 0 48px 16px rgba(0, 0, 0, 0.03);
+          }
+        }
+      }
+      
+      // RTL animations for various components
+      .ant-collapse-item {
+        .ant-collapse-header {
+          .ant-collapse-arrow {
+            transform: rotate(90deg);
+            
+            &.ant-collapse-arrow-active {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+      }
+      
+      // Ensure form validation messages are properly aligned
+      .ant-form-item-explain,
+      .ant-form-item-extra {
+        text-align: right;
+      }
+      
+      // Table columns alignment
+      .ant-table {
+        .ant-table-thead > tr > th,
+        .ant-table-tbody > tr > td {
+          text-align: right;
+        }
+        
+        .ant-table-filter-trigger {
+          margin-right: 4px;
+          margin-left: 0;
+        }
+      }
+      
+      // Modal close button
+      .ant-modal-close {
+        right: auto;
+        left: 0;
+      }
+      
+      // Steps component
+      .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
+        margin-right: 0;
+        margin-left: 16px;
+      }
+      
+      // Notification positioning
+      .ant-notification {
+        &.ant-notification-topRight {
+          margin-right: 0;
+          margin-left: 24px;
+          right: auto;
+          left: 0;
+        }
+        
+        &.ant-notification-bottomRight {
+          margin-right: 0;
+          margin-left: 24px;
+          right: auto;
+          left: 0;
+        }
+      }
+    }
+    
+    // Shared animations for direction transitions
+    .ant-layout,
+    .ant-menu {
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    }
+    
+    // Persian/Farsi specific adjustments
+    &.lang-fa {
+      // Font family specific to Persian/Farsi
+      font-family: Vazir, Tahoma, "Iranian Sans", Arial, sans-serif;
+      
+      // Adjust line height for Farsi text which is typically taller
+      line-height: 1.8;
+      
+      // Adjust spacing for Persian digits
+      .ant-input-number-input,
+      input[type="number"] {
+        letter-spacing: 0.5px;
+      }
+      
+      // Calendar adjustments for Persian date format
+      .ant-picker-content th,
+      .ant-picker-header-view {
+        font-size: 12px;
+      }
+      
+      // Adjust for Persian digits in UI elements
+      .ant-statistic-content,
+      .ant-table-cell {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: bidi-override;
+      }
+      
+      // Adjust for Persian text overflow in buttons
+      .ant-btn {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      
+      // Ensure correct text alignment in form labels
+      .ant-form-item-label > label {
+        text-align: right;
+      }
+      
+      // Fix RTL direction for tooltips
+      .ant-tooltip {
+        .ant-tooltip-inner {
+          text-align: right;
+        }
+      }
+      
+      // Fix for date/time picker
+      .ant-picker {
+        &.ant-picker-rtl {
+          .ant-picker-input > input {
+            text-align: right;
+          }
+        }
+      }
+      
+      // Adjust for Persian month names which can be longer
+      .ant-picker-cell-inner {
+        font-size: 12px;
+      }
+    }
+  }
